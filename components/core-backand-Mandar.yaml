@@ -21,4 +21,4 @@ spec:
   dependsOn:
     - resource:default/core-db
   providesApis:
-    - core-api
+    - core-api-Mandar
