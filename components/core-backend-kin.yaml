@@ -1,14 +1,14 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: core-backend-<input username>
+  name: core-backend-kin
   description: Use this as a sample service to get started
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
     - sample
     - core
-    - <input username>
+    - kin
   links:
     - url: https://developer.harness.io/docs/category/get-started-with-idp
       title: Core Backend Endpoint
