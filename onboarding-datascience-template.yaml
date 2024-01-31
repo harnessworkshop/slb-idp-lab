@@ -1,0 +1,59 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: onboard-data-science
+  title: Create a cookicutter datascience app
+  description: A template to create a new cookiecutter datascience app
+  tags:
+    - sample
+    - workshop
+    - datascience
+spec:
+  owner: platformteam
+  type: service
+  parameters:
+    - title: Repository onboarding details
+      required:
+        - project_name
+        - feature_branch
+      properties:
+        project_name:
+          title: Name of the new repo
+          type: string
+          description: Unique name of the app/repository
+        feature_branch:
+          title: Name of the feature branch to begin work on
+          type: string
+          description: This will be the name of the working branch in your new repository
+    - title: Service Infrastructure Details
+      required:
+        - owner
+      properties:
+        owner:
+          title: Choose an Owner for the Service
+          type: string
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+        # This field is hidden but needed to authenticate the request to trigger the pipeline
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
+  steps:
+    - id: trigger
+      name: Creating your data science project
+      action: trigger:harness-custom-pipeline
+      input:
+        url: "https://app.harness.io/ng/account/yQvtq8usTqy7F9FkPQgmEA/home/orgs/default/projects/IDP_Workshop/pipelines/Onboard_Service/pipeline-studio/?storeType=INLINE"
+        inputset:
+          project_name: ${{ parameters.project_name }}
+          feature_branch: ${{ parameters.feature_branch }}
+        apikey: ${{ parameters.token }}
+
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}

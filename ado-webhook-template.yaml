@@ -1,0 +1,53 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: kickoff-ado-pipeline
+  title: Kick off a pipeline in Azure DevOps
+  description: Kick off a pipeline in Azure DevOps and pass values from Harness to pipeline
+  tags:
+    - sample
+    - workshop
+    - selfservice
+spec:
+  owner: platformteam
+  type: service
+  parameters:
+    - title: Repository onboarding details
+      required:
+        - project_name
+      properties:
+        project_name:
+          title: Name of the Azure DevOps project
+          type: string
+          description: Unique name of the project where the pipeline lives in Azure DevOps         
+    - title: Service Infrastructure Details
+      required:
+        - owner
+      properties:
+        owner:
+          title: Choose an Owner for the Service
+          type: string
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+        # This field is hidden but needed to authenticate the request to trigger the pipeline
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
+  steps:
+    - id: trigger
+      name: Creating your react app
+      action: trigger:harness-custom-pipeline
+      input:
+        url: "https://app.harness.io/ng/account/yQvtq8usTqy7F9FkPQgmEA/home/orgs/default/projects/IDP_Workshop/pipelines/Trigger_Azure_DevOps/pipeline-studio/?storeType=INLINE"
+        inputset:
+          project_name: ${{ parameters.project_name }}
+        apikey: ${{ parameters.token }}
+
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}

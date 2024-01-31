@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: Workshop
+  description: Use this as a sample system to get started
+  tags:
+    - sample
+    - core  
+  links:
+    - url: https://harness.io
+      title: Harness Website
+      icon: dashboard
+spec:
+  owner: platformteam
+  domain: Core
