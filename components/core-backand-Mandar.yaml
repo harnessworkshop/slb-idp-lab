@@ -5,6 +5,7 @@ metadata:
   description: Use this as a sample service to get started
   annotations:
     backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: sample-pythonapp
   tags:
     - sample
     - core
