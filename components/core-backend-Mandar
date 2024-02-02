@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: core-backend-Mandar
+  description: Use this as a sample service to get started
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: pythonsampleapp
+    backstage.io/kubernetes-namespace: sample
+  tags:
+    - sample
+    - core
+    - mandar
+  links:
+    - url: https://developer.harness.io/docs/category/get-started-with-idp
+      title: Core Backend Endpoint
+      icon: search
+spec:
+  type: service
+  lifecycle: experimental
+  owner: platformteam
+  system: workshop
+  dependsOn:
+    - resource:default/core-db
+  providesApis:
+    - core-api-Mandar
