@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: core-backend-Mandar
-  description: Use this as a sample service to get started
+  description: Sample service to get started
   annotations:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: pythonsampleapp
