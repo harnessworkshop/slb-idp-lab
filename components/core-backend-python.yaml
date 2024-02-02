@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: core-backend-Mandar
+  name: core-backend-python
   description: Use this as a sample service to get started
   annotations:
     backstage.io/techdocs-ref: dir:.
@@ -10,7 +10,7 @@ metadata:
   tags:
     - sample
     - core
-    - mandar
+    - python
   links:
     - url: https://developer.harness.io/docs/category/get-started-with-idp
       title: Core Backend Endpoint
