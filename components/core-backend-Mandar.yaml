@@ -5,7 +5,7 @@ metadata:
   description: Sample service to get started
   annotations:
     backstage.io/techdocs-ref: dir:.
-    backstage.io/kubernetes-id: pythonsampleapp
+    backstage.io/kubernetes-id: pythonsvc
     backstage.io/kubernetes-namespace: sample
   tags:
     - sample
