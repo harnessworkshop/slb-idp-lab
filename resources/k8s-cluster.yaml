@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: k8s-cluster
+  description: This is a K8S cluster
+  tags:
+    - sample
+    - cluster
+spec:
+  type: cluster
+  owner: platformteam
+  system: workshop
