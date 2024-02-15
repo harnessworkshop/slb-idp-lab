@@ -5,6 +5,10 @@ metadata:
   description: This is a demo K8S cluster
   tags:
     - democluster
+  links:
+    - url: https://democluster-dns-a1vpv42o.hcp.northeurope.azmk8s.io
+      title: AKS link
+      icon: dashboard
 spec:
   type: cluster
   owner: platformteam
