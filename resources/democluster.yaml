@@ -6,7 +6,7 @@ metadata:
   tags:
     - democluster
   links:
-    - url: https://democluster-dns-a1vpv42o.hcp.northeurope.azmk8s.io
+    - url: https://democluster
       title: AKS link
       icon: dashboard
 spec:
