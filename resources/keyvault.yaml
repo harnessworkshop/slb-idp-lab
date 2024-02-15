@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: keyvault
+  description: Azure Key Vault for platform team
+  tags:
+    - mjk-key-vault
+  links:
+    - url: https://keyvault
+      title: KeyVault
+      icon: dashboard
+spec:
+  type: keyvault
+  owner: platformteam
+  system: workshop
