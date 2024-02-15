@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: container registry
+  description: Azure Container Registry for platform team
+  tags:
+    - mjk-acr
+  links:
+    - url: https://mjkacr
+      title: ACR
+      icon: dashboard
+spec:
+  type: acr
+  owner: platformteam
+  system: workshop
