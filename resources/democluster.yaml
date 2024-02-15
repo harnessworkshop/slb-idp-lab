@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: democluster
+  description: This is a demo K8S cluster
+  tags:
+    - democluster
+spec:
+  type: cluster
+  owner: platformteam
+  system: workshop
