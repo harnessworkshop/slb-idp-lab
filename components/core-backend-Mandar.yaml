@@ -6,7 +6,6 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     backstage.io/kubernetes-id: pythonsvc
-    backstage.io/kubernetes-namespace: sample
   tags:
     - sample
     - core
